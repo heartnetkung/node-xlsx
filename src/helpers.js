@@ -38,12 +38,11 @@ const buildSheetFromMatrix = (data, options = {}) => {
         cell.t = 'n';
         cell.v = buildExcelDate(cell.v);
         cell.z = XLSX.SSF._table[14]; // eslint-disable-line no-underscore-dangle
+      } else if (typeof cell.v === 'string' && cell.v[0] === '=') {
+        cell.f = cell.v.substring(1);
+        delete cell.v;
       } else {
         cell.t = 's';
-      }
-      if(typeof cell.v==='string' && cell.v[0]==='='){
-        cell.f=cell.v;
-        delete cell.v;
       }
       workSheet[cellRef] = cell;
     }
