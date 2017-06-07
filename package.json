@@ -9,7 +9,7 @@
   "repository": "github:mgcrea/node-xlsx",
   "license": "Apache-2.0",
   "dependencies": {
-    "xlsx": "^0.8.0"
+    "xlsx": "heartnetkung/xlsx"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
