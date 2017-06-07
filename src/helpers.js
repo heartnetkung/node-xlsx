@@ -41,6 +41,10 @@ const buildSheetFromMatrix = (data, options = {}) => {
       } else {
         cell.t = 's';
       }
+      if(typeof cell.v==='string' && cell.v[0]==='='){
+        cell.f=cell.v;
+        delete cell.v;
+      }
       workSheet[cellRef] = cell;
     }
   }
